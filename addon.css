@@ -1,0 +1,42 @@
+/* 靜霧 SEIMU — header 會員/購物車 + 側欄 + 會員中心(addon, 極簡奢華) */
+.menu .acct-link,.menu .cart-toggle{display:inline-flex;align-items:center;gap:.4rem;background:none;border:0;cursor:pointer;color:var(--ink,#1c1b19);font:inherit;font-size:.95rem;padding:.2rem;line-height:1}
+.menu .cart-toggle{position:relative}
+.menu li:has(.acct-link),.menu li:has(.cart-toggle){display:inline-flex;align-items:center}
+.menu .acct-link svg,.menu .cart-toggle svg{width:21px;height:21px}
+.menu .acct-link:hover,.menu .cart-toggle:hover{color:#b1925f}
+.cart-badge{display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 4px;background:#b1925f;color:#f5f1e9;font-size:10px;font-weight:600;border-radius:50px}
+.cart-overlay{position:fixed;inset:0;background:rgba(28,27,25,.5);opacity:0;visibility:hidden;transition:.3s;z-index:200}
+.cart-overlay.show{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,92vw);background:#f5f1e9;border-left:1px solid #d8d1c2;transform:translateX(100%);transition:transform .35s ease;z-index:210;display:flex;flex-direction:column;color:#1c1b19}
+.cart-drawer.open{transform:translateX(0)}
+.cd-head{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.5rem;border-bottom:1px solid #d8d1c2}
+.cd-head h2{font-family:"Cormorant Garamond","Noto Serif TC",serif;font-size:1.5rem;margin:0;font-weight:600}
+.cd-close{background:none;border:0;cursor:pointer;color:#1c1b19;display:inline-flex;padding:.3rem}.cd-close svg{width:23px;height:23px}
+.cd-body{flex:1;overflow:auto;padding:1.8rem 1.5rem}
+.cd-empty{text-align:center;margin-top:2.4rem;line-height:2;color:#8a857c}
+.cd-foot{border-top:1px solid #d8d1c2;padding:1.4rem 1.5rem}
+.cd-total{display:flex;justify-content:space-between;font-family:"Cormorant Garamond",serif;font-size:1.2rem;margin-bottom:1rem}
+.mc-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:#1c1b19;color:#f5f1e9;border:1px solid #1c1b19;padding:.85rem 1.8rem;cursor:pointer;transition:.25s;font:inherit;letter-spacing:.08em;text-decoration:none;font-size:.86rem}
+.mc-btn:hover{background:#b1925f;border-color:#b1925f}
+.cd-foot .mc-btn{width:100%}
+.mc-wrap{max-width:1140px;margin:0 auto;padding:2.6rem 24px 4.5rem;color:#1c1b19}
+.mc-crumb{font-size:.8rem;letter-spacing:.1em;color:#8a857c;margin-bottom:1.6rem}.mc-crumb a{color:#8a857c}.mc-crumb a:hover{color:#b1925f}
+.mc-title{font-family:"Cormorant Garamond","Noto Serif TC",serif;font-weight:600;font-size:clamp(2.4rem,6vw,4rem);margin:0 0 .5rem}
+.mc-sub{max-width:54ch;margin:0 0 2.6rem;font-size:1.08rem;color:#3d3a35}
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-bottom:1rem}
+.mc-card{border:1px solid #d8d1c2;background:#ece6da;padding:2rem}
+.mc-card h2{font-family:"Cormorant Garamond","Noto Serif TC",serif;font-weight:600;font-size:1.7rem;margin:0 0 1.3rem}
+.mc-card label{display:block;font-size:.78rem;letter-spacing:.06em;margin-bottom:1.1rem;color:#8a857c}
+.mc-card input{display:block;width:100%;margin-top:.45rem;padding:.8rem .9rem;border:1px solid #d8d1c2;background:#f5f1e9;font:inherit;font-size:15px;color:#1c1b19}
+.mc-card input:focus{outline:none;border-color:#b1925f}
+.mc-h2{font-family:"Cormorant Garamond","Noto Serif TC",serif;font-weight:600;font-size:clamp(1.8rem,4vw,2.6rem);margin:2.6rem 0 1.5rem}
+.mc-benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.mc-benefit{border:1px solid #d8d1c2;padding:1.5rem;background:#ece6da}
+.mc-benefit svg{width:30px;height:30px;margin-bottom:.8rem;color:#b1925f}
+.mc-benefit h3{font-family:"Cormorant Garamond",serif;font-size:1.2rem;margin:0 0 .4rem}.mc-benefit p{margin:0;font-size:.9rem;color:#3d3a35}
+.mc-orders{border:1px solid #1c1b19;background:#1c1b19;color:#f5f1e9;padding:2.2rem;text-align:center;margin-top:1.8rem}
+.mc-orders h2{font-family:"Cormorant Garamond",serif;margin:0 0 .6rem;color:#f5f1e9}.mc-orders p{margin:0 0 1.5rem;color:#cfc7b8}
+.addon-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,150%);background:#1c1b19;color:#f5f1e9;padding:.9rem 1.6rem;z-index:300;transition:transform .4s;letter-spacing:.05em}
+.addon-toast.show{transform:translate(-50%,0)}
+@media(max-width:760px){.mc-grid{grid-template-columns:1fr}.mc-benefits{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.mc-benefits{grid-template-columns:1fr}}
